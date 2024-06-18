@@ -2,7 +2,7 @@ import torch.nn as nn
 
 
 class EnhancedAudioCNN(nn.Module):
-    def __init__(self):
+    def __init__(self, num_classes=20):
         super(EnhancedAudioCNN, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, kernel_size=(3, 3), padding=1)
         self.bn1 = nn.BatchNorm2d(32, momentum=0.01)
@@ -17,7 +17,7 @@ class EnhancedAudioCNN(nn.Module):
         self.fc1 = nn.Linear(64 * 10 * 2, 32)
         self.relu = nn.ReLU()
         self.dropout2 = nn.Dropout(0.1)
-        self.fc2 = nn.Linear(32, 20)
+        self.fc2 = nn.Linear(32, num_classes)
 
     def forward(self, x):
         x = self.pool(self.relu(self.bn1(self.conv1(x))))
