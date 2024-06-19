@@ -44,7 +44,7 @@ def opts_parser():
                         type=str, default='predictions_baseline.csv',
                         help='path to csv with predicted speech commands')
     parser.add_argument('--annotations',
-                        type=str, default='development_scene_annotations.csv',
+                        type=str, default='annotations.csv',
                         help='path to csv with strong annotations')
     parser.add_argument('--dump_result',
                         action='store_true',
