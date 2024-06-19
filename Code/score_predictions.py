@@ -193,7 +193,7 @@ def load_ground_truth(annotations_file_path: str):
             if i == 0:
                 # skip header
                 assert len(r) == 4 and r[0] == 'filename' and r[1] == 'command' and r[
-                    2] == 'start' and r[3] == 'end', f"Header of predictions.csv is not correct. Should be filename,command,start,end but got {r}"
+                    2] == 'start' and r[3] == 'end', f"Header of predictions_last.csv is not correct. Should be filename,command,start,end but got {r}"
                 continue
             r = list(r)
             event_list = actual_commands_per_file.get(r[0], [])
@@ -219,7 +219,7 @@ def load_predictions(predictions_file_path: str):
             if i == 0:
                 # skip header
                 assert len(r) == 3 and r[0] == 'filename' and r[1] == 'command' and r[
-                    2] == 'timestamp', f"Header of predictions.csv is not correct. Should be filename,command,timestamp but got {r}"
+                    2] == 'timestamp', f"Header of predictions_last.csv is not correct. Should be filename,command,timestamp but got {r}"
                 continue
             # get event list for current file
             event_list = predicted_commands_per_file.get(r[0], [])

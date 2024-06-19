@@ -90,8 +90,8 @@ def predictions(results):
         elif word in activation_keywords and last_word in device_keywords:
             command = last_word + " " + word
             final_predictions.append((command, last_idx, idx))
-            last_word = word
-            last_idx = idx
+            last_word = None
+            last_idx = None
         else:
             last_word = word
             last_idx = idx
