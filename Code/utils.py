@@ -47,7 +47,7 @@ def segment_features(features, segment_frames=44, hop_frames=1):
 def predictions(results):
     threshold_60 = [13, 14]
     threshold_80 = [6]
-    threshold_99 = [1, 2, 3, 12, 19]
+    threshold_99 = [0, 1, 2, 3, 4, 12, 19]
 
     device_keywords = ['Alarm', 'Fernseher', 'Heizung', 'Licht', 'Lüftung', 'Ofen', 'Radio', 'Staubsauger']
     activation_keywords = ['an', 'aus']
